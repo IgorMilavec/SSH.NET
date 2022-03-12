@@ -156,6 +156,21 @@ namespace Renci.SshNet
             get { return _sftpSession; }
         }
 
+        /// <summary>
+        /// Gets a value indicating whether this client is connected to the server.
+        /// </summary>
+        /// <value>
+        /// <c>true</c> if this client is connected; otherwise, <c>false</c>.
+        /// </value>
+        /// <exception cref="ObjectDisposedException">The method was called after the client was disposed.</exception>
+        public override bool IsConnected
+        {
+            get
+            {
+                return base.IsConnected && _sftpSession.IsOpen;
+            }
+        }
+
         #region Constructors
 
         /// <summary>

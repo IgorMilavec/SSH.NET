@@ -72,7 +72,7 @@ namespace Renci.SshNet
         /// <c>true</c> if this client is connected; otherwise, <c>false</c>.
         /// </value>
         /// <exception cref="ObjectDisposedException">The method was called after the client was disposed.</exception>
-        public bool IsConnected
+        public virtual bool IsConnected
         {
             get
             {
